@@ -11,18 +11,20 @@
 
 namespace Heroes {
 
-std::array<Hero, COUNT> list{}; // NOLINT
+std::array<Hero, COUNT> list{};
 
 /** @brief The number of heroes that have been created and added to the list so
  * far */
-size_t count{}; // NOLINT
+size_t count{};
+
+std::vector<std::string> acquisition_methods{};
 
 void MakeHeroes() {
   if (!list[0].empty()) {
     throw std::runtime_error("Unexpectedly called MakeHeroes twice.");
   }
 
-  // read data files
+  // read data files acquisition, draws, owned
   std::unordered_map<std::string, std::vector<std::string>> acquisition =
       ReadAcquisitionData();
   std::deque<
@@ -35,6 +37,7 @@ void MakeHeroes() {
     hero_names[i] = upgrades[i].first;
   }
 
+  // read heroes data file, construct hero objects and heroes list
   ReadHeroesData(acquisition, upgrades);
 
   // owned sources are owned.csv
@@ -59,6 +62,10 @@ ReadAcquisitionData() {
                                "data/draws.txt must not contain duplicates.");
     }
     acquisition[item.first] = item.second;
+  }
+  acquisition_methods.reserve(acquisition.size());
+  for (const auto &item : acquisition) {
+    acquisition_methods.push_back(item.first);
   }
   return acquisition;
 }
@@ -92,9 +99,10 @@ ReadOwnedData() {
     // read and validate the data
     //
     /* each CSV record is a list like [[Boar Hat] Tavern Master Meliodas, UR,
-     * 80, 6, true, 6] int Hero::UPGRADES_COUNT = 5 is the number of upgradeable
-     * fields enum Hero::UPGRADEABLE = grade, level, awakening stars, unique
-     * unlocked, ultimate move level
+     * 80, 6, true, 6].
+     * int Hero::UPGRADES_COUNT = 5 is the number of upgradeable fields.
+     * enum Hero::UPGRADEABLE = grade, level, awakening stars, unique unlocked,
+     * ultimate move level.
      */
     std::vector<std::string> data = Utilities::ParseCSV(line);
     Utilities::ValidateList(data, Hero::UPGRADES_COUNT + 1,
@@ -163,9 +171,8 @@ void ValidateHeroNames(const std::vector<std::string> &hero_names,
       }
     }
     if (!hero_found) {
-      std::string error_message = "Hero name " + hero_name + " in " +
-                                  source_name +
-                                  " was not found in heroes.csv."; // NOLINT
+      std::string error_message = "Hero name " + hero_name + " in " + // NOLINT
+                                  source_name + " was not found in heroes.csv.";
       throw std::runtime_error(error_message);
     }
   }

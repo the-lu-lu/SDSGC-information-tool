@@ -22,8 +22,6 @@
   - [ ] Troubleshooting exceptions
   - [ ] Adding newly released heroes and changing/updating tier lists
 - [ ] Figure out handling run directory/data file paths better if possible
-- [ ] Add code documentation e.g. change comments to Doxygen style
-- [ ] Think about organisation decision that could fix the need to call HashKeys(ReadLists()) in Filter::GetArguments()
 
 ## Distribution/installer
 - [ ] Think about adding GitHub Actions for executable build?
@@ -52,3 +50,5 @@
 - [x] Change/add owned heroes (urgent!)
 - [x] Think about adding has LR to hero data
 - [x] The organisation of the hero constructor is reeeally ugly. It looks through the whole map every time, when they're literally in order? Do something about that...!
+- [x] Add code documentation e.g. change comments to Doxygen style
+- [x] Think about organisation decision that could fix the need to call HashKeys(ReadLists()) in Filter::GetArguments()

@@ -95,11 +95,10 @@ std::vector<std::string> GetArguments(size_t int_input) {
     std::cout << std::endl;
     std::vector<std::string> tiers{"1", "2", "3", "4", "5"};
     return AskForArguments("tiers", tiers, count_input);
-  } else if (condition.name == "AvailableFromDraw") {
+  } else if (condition.name == "AvailableByMethod") {
     std::string DATA_DIR = "../data";
-    std::vector<std::string> draws =
-        Utilities::HashKeys(Utilities::ReadLists(DATA_DIR + "/draws.txt"));
-    return AskForArguments("draw", draws, 1);
+    return AskForArguments("acquisition method", Heroes::acquisition_methods,
+                           1);
   } else if (condition.name == "Upgraded") {
     std::cout << "Enter the minimum level of heroes you want to show."
               << std::endl;
@@ -255,10 +254,10 @@ Condition Good(const std::vector<std::string> &arguments) {
   };
 }
 
-Condition AvailableFromDraw(const std::vector<std::string> &arguments) {
+Condition AvailableByMethod(const std::vector<std::string> &arguments) {
   if (arguments.size() != 1) {
     throw std::invalid_argument(
-        "Input to AvailableFromDraw should be 1 string");
+        "Input to AvailableByMethod should be 1 string");
   }
   const std::string &draw = arguments.at(0);
   return [draw](const Hero &hero) -> bool {

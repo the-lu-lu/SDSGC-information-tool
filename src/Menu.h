@@ -5,6 +5,7 @@
  * @brief Implements menu and inputs.
  */
 
+#include <array>
 #include <functional>
 #include <string>
 #include <vector>
@@ -22,11 +23,14 @@ struct MenuFunction {
   std::function<void()> function;
 };
 
+/** @brief The number of main menu functions */
+static constexpr size_t M_FUNCTIONS_COUNT{2};
 /**
  * @brief Hardcoded list of all main menu functions
  */
-const std::vector<MenuFunction> menu_functions = {{"Filter", Menu_Filter},
-                                                  {"AddOwned", Menu_AddOwned}};
+const std::array<MenuFunction, M_FUNCTIONS_COUNT> menu_functions = {
+    MenuFunction{"Filter", Menu_Filter},
+    MenuFunction{"AddOwned", Menu_AddOwned}};
 
 /**
  * @brief An interactive menu to choose from the program's capabilities.

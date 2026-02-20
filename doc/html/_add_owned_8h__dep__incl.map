@@ -1,0 +1,5 @@
+<map id="src/AddOwned.h" name="src/AddOwned.h">
+<area shape="rect" id="node1" title="Used by the AddOwned main menu option, to update a list of heroes and then write to the data/owned...." alt="" coords="87,5,213,32"/>
+<area shape="rect" id="node2" href="$_add_owned_8cpp.html" title=" " alt="" coords="5,80,148,107"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title=" " alt="" coords="172,80,277,107"/>
+</map>

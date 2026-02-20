@@ -7,12 +7,27 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Use all .cpp files as source code to build an application
-file(GLOB SOURCES "src/*.cpp")
 option(WARN "Enable additional compiler warnings" OFF)
 if(WARN)
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} 
+        src/AddOwned.cpp
+        src/AddOwned.h
+        src/Filter.cpp
+        src/Filter.h
+        src/Hero.cpp
+        src/Hero.h
+        src/Heroes.cpp
+        src/Heroes.h
+        src/main.cpp
+        src/Menu.cpp
+        src/Menu.h
+        src/Project.h
+        src/Utilities.cpp
+        src/Utilities.h
+        src/Utilities.tpp
+)
 
 option(STATIC "Use static linking to include libraries in the executable file" ON)
 if(STATIC)

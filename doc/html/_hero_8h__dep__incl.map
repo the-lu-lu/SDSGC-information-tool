@@ -1,0 +1,13 @@
+<map id="src/Hero.h" name="src/Hero.h">
+<area shape="rect" id="node1" title="Declares Hero struct." alt="" coords="317,5,405,32"/>
+<area shape="rect" id="node2" href="$_add_owned_8cpp.html" title=" " alt="" coords="5,304,148,331"/>
+<area shape="rect" id="node3" href="$_add_owned_8h.html" title="Used by the AddOwned main menu option, to update a list of heroes and then write to the data/owned...." alt="" coords="64,229,191,256"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title=" " alt="" coords="227,304,332,331"/>
+<area shape="rect" id="node5" href="$_filter_8cpp.html" title=" " alt="" coords="494,304,598,331"/>
+<area shape="rect" id="node6" href="$_filter_8h.html" title="Used by the Filter main menu option, to return a list of heroes which can be filtered based on chosen..." alt="" coords="317,155,407,181"/>
+<area shape="rect" id="node9" href="$_hero_8cpp.html" title=" " alt="" coords="483,155,585,181"/>
+<area shape="rect" id="node10" href="$_heroes_8cpp.html" title=" " alt="" coords="609,155,728,181"/>
+<area shape="rect" id="node11" href="$_heroes_8h.html" title="Heroes namespace contains the code to create the list of heroes." alt="" coords="355,80,457,107"/>
+<area shape="rect" id="node7" href="$_menu_8h.html" title="Implements menu and inputs." alt="" coords="367,229,461,256"/>
+<area shape="rect" id="node8" href="$_menu_8cpp.html" title=" " alt="" coords="360,304,468,331"/>
+</map>

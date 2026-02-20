@@ -27,11 +27,13 @@ static constexpr size_t COUNT{309};
  * pointers into this list.
  * @see MakeHeroes
  */
-extern std::array<Hero, COUNT> list; // NOLINT
+extern std::array<Hero, COUNT> list;
 
 /** @brief The number of heroes that have been created and added to the list so
  * far */
-extern size_t count; // NOLINT
+extern size_t count;
+
+extern std::vector<std::string> acquisition_methods;
 
 /**
  * @brief This function processes all the data files. Calls ReadHeroesData,

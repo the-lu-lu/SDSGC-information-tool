@@ -1,6 +1,8 @@
 # SDSGC Information Tool
 This program is a tool for information about characters in the gacha game, Seven Deadly Sins Grand Cross. For example, you can ask for a list of the characters that are good, the characters you don't have, the characters you have at a certain ultimate move level, the characters that are currently acquirable. Personally, I made the tool to help myself easily see how good a draw is, without going back 100 times to the heroes list! I decided to share it in the hope it can help other people too. :)
 
+This is unlikely to get further updates as the app takes too much space to fit on my phone, lol.
+
 ## Table of Contents
 - [Features](#features)
 - [Installation](#installation)
@@ -13,7 +15,7 @@ This program is a tool for information about characters in the gacha game, Seven
 
 ## Installation
 ### Releases
-Windows installers are available. See the [Releases](https://github.com/Lucaz8de/SDSGC-information-tool/releases) section on the right of the page.
+Windows installers are available. See the [Releases](https://github.com/the-lu-lu/SDSGC-information-tool/releases) section on the right of the page.
 
 ### Build from source
 If you prefer, you can build the program yourself from the source code. (By doing this, you can make changes if you want to, and share them if you want to!) If you're on 64-bit Windows and don't already have development tools, you can keep reading!
@@ -21,7 +23,7 @@ If you prefer, you can build the program yourself from the source code. (By doin
 #### Downloading the source code
 If you have Git on your computer, clone the repository, either using your favourite graphical tool or by running the clone command from the command line.
 ```bash
-git clone https://github.com/Lucaz8de/SDSGC-information-tool.git
+git clone https://github.com/the-lu-lu/SDSGC-information-tool.git
 ```
 Alternatively, use the green "Code" button in the top right of this page, download and extract the source code.
 

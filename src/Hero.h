@@ -21,15 +21,16 @@ struct Hero {
   static constexpr std::array<size_t, 4> NUMERICAL_INFORMATION{8, 9, 10, 11};
   /** @brief The indices that contain boolean data */
   static constexpr std::array<size_t, 1> BOOLEAN_INFORMATION{5};
-  /** @brief The hero's entire in-game name */
+  /** @brief The hero's entire in-game name (e.g. [Boar Hat] Tavern Master
+   * Meliodas) */
   std::string hero;
-  /** @brief The hero's "name" */
+  /** @brief The hero's "name" (e.g. Tavern Master Meliodas) */
   std::string name;
   /** @brief The hero's attribute */
   std::string attribute;
   /** @brief The hero's starting grade */
   std::string starting_grade;
-  /** @brief The hero's name */
+  /** @brief The hero's character name (e.g. Meliodas) */
   std::string character;
   /** @brief Whether the hero has an LR grade upgrade */
   bool lr;
@@ -53,11 +54,10 @@ struct Hero {
   static constexpr std::array<size_t, 3> NUMERICAL_UPGRADES{2, 3, 5};
   /** @brief The indices of upgrades that contain boolean data */
   static constexpr std::array<size_t, 1> BOOLEAN_UPGRADES{4};
-  /** @brief A list of the hero's upgrades. Empty for unowned heroes. */
+  /** @brief A list of the hero's upgrades. */
   std::array<std::string, UPGRADES_COUNT> upgrades;
 
-  /** @brief A list of the ways the hero can currently be obtained in-game.
-   * Empty for unobtainable heroes. */
+  /** @brief A list of the ways the hero can currently be obtained in-game. */
   std::vector<std::string> acquisition;
 
   /**

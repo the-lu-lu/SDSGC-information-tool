@@ -17,7 +17,7 @@ int main() {
   } catch (std::exception &ex) {
     // should make custom exception types
     // e.g. exceptions are thrown when a data file isn't found or has invalid
-    // data these errors aren't recoverable, i.e. the data needs to be changed
+    // data. these errors aren't recoverable, i.e. the data needs to be changed
     // before the program can retry.
     std::cerr << ex.what() << std::endl;
     return EXIT_FAILURE;
@@ -48,7 +48,7 @@ void Menu_Filter() {
   std::string x{};
   std::getline(std::cin, x);
 
-  for (auto &it : filtered) {
+  for (const auto &it : filtered) {
     std::cout << *it << std::endl;
   }
 }

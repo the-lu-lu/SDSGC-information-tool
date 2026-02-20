@@ -22,12 +22,13 @@ Hero::Hero(const std::array<std::string, INFORMATION_COUNT> &data,
                &upgrades,
            const std::unordered_map<std::string, std::vector<std::string>>
                &acquisition)
-    : hero{data[0]}, name{data[1]}, attribute{data[2]},
-      starting_grade{data[3]}, character{data[4]}, // NOLINT
-      lr{data[5] == "true"}, races{Utilities::ParseCSV(data[6])},
-      characteristic{data[7]}, // NOLINT
-      tiers{std::stoi(data[8]), std::stoi(data[9]), std::stoi(data[10]),
-            std::stoi(data[11])}, // NOLINT
+    : hero{data[0]}, name{data[1]}, attribute{data[2]}, starting_grade{data[3]},
+      character{data[4]}, lr{data[5] == "true"},    // NOLINT
+      races{Utilities::ParseCSV(data[6])},          // NOLINT
+      characteristic{data[7]},                      // NOLINT
+      tiers{std::stoi(data[8]), std::stoi(data[9]), // NOLINT
+            std::stoi(data[10]),                    // NOLINT
+            std::stoi(data[11])},                   // NOLINT
       owned{false}, upgrades{}, acquisition{} {
   // heroes are added in the same order, so check if current hero is owned
   auto &next_owned = upgrades.front();
@@ -63,12 +64,12 @@ std::ostream &operator<<(std::ostream &os, const Hero &hero) {
   os << "Hero: " << hero.hero << ". Name: " << hero.name
      << ". Attribute: " << hero.attribute
      << ". Starting grade: " << hero.starting_grade
-     << ". Character: " << hero.character << ", race(s) "
-     << Utilities::MakeCSV(hero.races) << ", of " << hero.characteristic
-     << ". Tier " << hero.tiers[0] << " on Amazing's PVP tier list and tier "
-     << hero.tiers[1] << " on his PVE tier list. "
-     << "Tier " << hero.tiers[2] << " on Nagato's PVP tier list and tier "
-     << hero.tiers[3] << " on his PVE tier list. ";
+     << ". Character: " << hero.character << ", race(s) " << hero.races
+     << ", of " << hero.characteristic << ". Tier " << hero.tiers[0]
+     << " on Amazing's PVP tier list and tier " << hero.tiers[1]
+     << " on his PVE tier list. " << "Tier " << hero.tiers[2]
+     << " on Nagato's PVP tier list and tier " << hero.tiers[3]
+     << " on his PVE tier list. ";
   if (hero.owned) {
     os << "I already own this hero at ultimate level "
        << hero.upgrades[Hero::ULTIMATE] << ".";

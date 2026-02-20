@@ -186,7 +186,7 @@ Condition Acquirable(const std::vector<std::string> &arguments);
  * @return Condition that is true if Hero is available from that draw.
  * @throw std::invalid_argument
  */
-Condition AvailableFromDraw(const std::vector<std::string> &arguments);
+Condition AvailableByMethod(const std::vector<std::string> &arguments);
 
 /**
  * @param &arguments The vector is empty.
@@ -239,7 +239,7 @@ const std::vector<ConditionFunction> conditions = {
     {"Good", Good},
     {"Owned", Owned},
     {"Acquirable", Acquirable},
-    {"AvailableFromDraw", AvailableFromDraw},
+    {"AvailableByMethod", AvailableByMethod},
     {"Upgraded", Upgraded},
 };
 

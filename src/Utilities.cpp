@@ -73,8 +73,8 @@ std::string MakeCSV(const std::vector<std::string> &vec) {
 
     // add string value to CSV
     if (special) {
-      f_str = "\"" + f_str + "\""; // string with special characters has to be
-                                   // wrapped in quotes NOLINT
+      f_str = "\"" + f_str + "\""; // string with special characters has NOLINT
+                                   // to be wrapped in quotes
     }
     out += f_str + ","; // comma separated
   }
@@ -129,4 +129,5 @@ ReadLists(const std::string &filename) {
   }
   return out;
 }
+
 } // namespace Utilities
